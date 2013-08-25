@@ -5,12 +5,6 @@ Superstore is a simple lightweight synchronous wrapper around localStorage.  Its
 - It is [resilient to iOS's strange behaviour in private browsing mode](http://stackoverflow.com/questions/14555347/html5-localstorage-doesnt-works-in-ios-safari-private-browsing).
 - It accepts objects as values and runs `JSON.stringify` on **#set** and `JSON.parse` on **#get** for you.
 
-## installation
-
-```
-npm install superstore
-```
-
 ## api
 
 SuperstoreSync is an uninstantiable module.  Its methods are:
