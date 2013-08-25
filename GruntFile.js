@@ -6,15 +6,15 @@ module.exports = function(grunt) {
 
     browserify: {
       build: {
-        src: 'lib/superstore.js',
-        dest: 'build/superstore.js'
+        src: 'lib/superstore-sync.js',
+        dest: 'build/superstore-sync.js'
       },
       test: {
-        src: 'coverage/lib/superstore.js',
-        dest: 'coverage/build/superstore.js'
+        src: 'coverage/lib/superstore-sync.js',
+        dest: 'coverage/build/superstore-sync.js'
       },
       options: {
-        standalone: 'Superstore'
+        standalone: 'SuperstoreSync'
       },
     },
 

@@ -1,10 +1,10 @@
 var config = module.exports;
 
-config['superstore'] = {
+config['superstore-sync'] = {
   rootPath: '../',
   environment: 'browser',
   sources: [
-    'coverage/build/superstore.js',
+    'coverage/build/superstore-sync.js',
     'node_modules/q/q.js'
   ],
   tests: [

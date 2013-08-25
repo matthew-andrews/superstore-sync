@@ -1,9 +1,8 @@
-# superstore [![Build Status](https://travis-ci.org/matthew-andrews/superstore.png?branch=master)](https://travis-ci.org/matthew-andrews/superstore)
+# superstore-sync
 
-Superstore is a simple lightweight asynchronous wrapper around localStorage.  Its features include:
+Superstore is a simple lightweight synchronous wrapper around localStorage.  Its features include:
 
 - It is [resilient to iOS's strange behaviour in private browsing mode](http://stackoverflow.com/questions/14555347/html5-localstorage-doesnt-works-in-ios-safari-private-browsing).
-- By making use of [setImmediate](https://github.com/NobleJS/setImmediate) its callbacks are truly asynchronous whilst still being cross-browser and performant (compared with `setTimeout(function() {}, 0)` [which introduces a delay of *at least* 10ms](https://developer.mozilla.org/en-US/docs/Web/API/window.setTimeout#Minimum.2F_maximum_delay_and_timeout_nesting)).
 - It accepts objects as values and runs `JSON.stringify` on **#set** and `JSON.parse` on **#get** for you.
 
 ## installation
@@ -14,7 +13,7 @@ npm install superstore
 
 ## api
 
-Superstore is an uninstantiable module.  Its methods are:
+SuperstoreSync is an uninstantiable module.  Its methods are:
 
 ### #get(key, callback)
 
@@ -26,7 +25,6 @@ Superstore is an uninstantiable module.  Its methods are:
 
 ## todo
 
+- Currently the tests are those from the old asynchronous library (they haven't been split out yet)
 - JSDoc comments and automatically generating documentation.
-- Should clear and unset be merged?  
-- Split superstore-sync into its own git repository
 - Split the tests up into those that test the async layer and those that test the localStorage layer.  (The point above is a dependency)
