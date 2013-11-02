@@ -14,7 +14,7 @@ module.exports = function(grunt) {
         dest: 'coverage/build/superstore-sync.js'
       },
       options: {
-        standalone: 'SuperstoreSync'
+        standalone: 'superstoreSync'
       },
     },
 
