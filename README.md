@@ -9,13 +9,13 @@ Superstore is a simple lightweight synchronous wrapper around localStorage.  Its
 
 SuperstoreSync is an uninstantiable module.  Its methods are:
 
-### #get(key, callback)
+### #get(key)
 
-### #set(key, value, callback)
+### #set(key, value)
 
-### #unset(key, callback)
+### #unset(key)
 
-### #clear(callback)
+### #clear()
 
 ## todo
 
