@@ -1,4 +1,5 @@
 var prefix = '';
+var buggyLocalStorage = false;
 var tests = {};
 
 try {
@@ -6,6 +7,7 @@ try {
   localStorage.removeItem('test');
 } catch (err) {
   if (err.code == 22) prefix = '// ';
+  buggyLocalStorage = true;
 }
 
 function getLocalStorage(key) {
@@ -13,11 +15,22 @@ function getLocalStorage(key) {
 };
 
 function setLocalStorage(key, val) {
-  return localStorage[key] = val;
+  if (buggyLocalStorage) return localStorage[key] = val;
 };
 
 tests["setUp"] = function() {
   localStorage.clear();
+};
+
+tests["Removing a key before it's set should be harmless"] = function() {
+  var exceptionThrown = false;
+  try {
+    superstoreSync.unset('keyUnset');
+  } catch (e) {
+    exceptionThrown = true;
+  }
+  assert.equals(false, exceptionThrown);
+  assert.equals(undefined, getLocalStorage('keyUnset'));
 };
 
 tests["Should be able to set and get data against a key"] = function() {
@@ -54,27 +67,35 @@ tests[prefix + "Should json encode and decode objects"] = function() {
   assert.equals(JSON.stringify(obj), getLocalStorage("keySeventh"));
 };
 
-tests[prefix + "#clear(something) clears only our namespaced data"] = function() {
+tests["#clear(something) clears only our namespaced data"] = function() {
   superstoreSync.set('other', '123');
   superstoreSync.set('prefixKeyTenth', 'A');
   superstoreSync.set('prefixKeyEleventh', 'B');
   superstoreSync.clear('prefixKey');
 
-  assert.equals(undefined, getLocalStorage("prefixKeyTenth"));
   assert.equals(undefined, superstoreSync.get("prefixKeyTenth"));
-  assert.equals(undefined, getLocalStorage("prefixKeyEleventh"));
   assert.equals(undefined, superstoreSync.get("prefixKeyEleventh"));
-  assert.equals('"123"', getLocalStorage("other"));
   assert.equals('123', superstoreSync.get("other"));
+
+  if (!buggyLocalStorage) {
+    assert.equals(undefined, getLocalStorage("prefixKeyEleventh"));
+    assert.equals('"123"', getLocalStorage("other"));
+    assert.equals(undefined, getLocalStorage("prefixKeyTenth"));
+  }
 };
 
-tests[prefix + "#clear() clears all data"] = function() {
+tests["#clear() clears all data"] = function() {
   superstoreSync.set('other', '123');
   superstoreSync.set('prefixKeyTwelth', 'C');
   superstoreSync.clear();
 
-  assert.equals(undefined, getLocalStorage("prefixKeyTwelth"));
-  assert.equals(undefined, getLocalStorage("other"));
+  assert.equals(undefined, superstoreSync.get("prefixKeyTwelth"));
+  assert.equals(undefined, superstoreSync.get("other"));
+
+  if (!buggyLocalStorage) {
+    assert.equals(undefined, getLocalStorage("prefixKeyTwelth"));
+    assert.equals(undefined, getLocalStorage("other"));
+  }
 };
 
 tests["watch for changes in other processes"] = function() {
