@@ -40,8 +40,8 @@ tests["Should be able to set and get data against a key"] = function() {
 };
 
 tests[prefix + "Should be able to read things (twice) from local storage"] = function() {
-  setLocalStorage("keyTwo", 3884);
-  assert.equals(getLocalStorage("keyTwo"), 3884);
+  superstoreSync.set("keyTwo", 3884);
+
   var val = superstoreSync.get('keyTwo');
   assert.equals(3884, val);
   var val2 = superstoreSync.get('keyTwo');
