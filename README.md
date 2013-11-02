@@ -19,6 +19,4 @@ superstore-sync is an uninstantiable module.  Its methods are:
 
 ## todo
 
-- Currently the tests are those from the old asynchronous library (they haven't been split out yet)
 - JSDoc comments and automatically generating documentation.
-- Split the tests up into those that test the async layer and those that test the localStorage layer.  (The point above is a dependency)
