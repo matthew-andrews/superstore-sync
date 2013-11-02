@@ -7,7 +7,7 @@ Superstore is a simple lightweight synchronous wrapper around localStorage.  Its
 
 ## api
 
-SuperstoreSync is an uninstantiable module.  Its methods are:
+superstore-sync is an uninstantiable module.  Its methods are:
 
 ### #get(key)
 
