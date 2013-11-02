@@ -15,7 +15,7 @@ superstore-sync is an uninstantiable module.  Its methods are:
 
 ### #unset(key)
 
-### #clear()
+### #clear(prefix)
 
 ## todo
 
