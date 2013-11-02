@@ -1,4 +1,4 @@
-# superstore-sync [![Build Status](https://travis-ci.org/matthew-andrews/superstore-sync.png?branch=master)](https://travis-ci.org/matthew-andrews/superstore-sync)
+# superstore-sync [![Build Status](https://travis-ci.org/matthew-andrews/superstore-sync.png?branch=master)](https://travis-ci.org/matthew-andrews/superstore-sync) [![NPM version](https://badge.fury.io/js/superstore-sync.png)](http://badge.fury.io/js/superstore-sync)
 
 Superstore is a simple lightweight synchronous wrapper around localStorage.  Its features include:
 
