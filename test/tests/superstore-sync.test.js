@@ -69,18 +69,18 @@ tests[prefix + "Should json encode and decode objects"] = function() {
 
 tests["#clear(something) clears only our namespaced data"] = function() {
   superstoreSync.set('other', '123');
-  superstoreSync.set('prefixKeyTenth', 'A');
-  superstoreSync.set('prefixKeyEleventh', 'B');
-  superstoreSync.clear('prefixKey');
+  superstoreSync.set('pref.?xKeyTenth', 'A');
+  superstoreSync.set('pref.?xKeyEleventh', 'B');
+  superstoreSync.clear('pref.?xKey');
 
-  assert.equals(undefined, superstoreSync.get("prefixKeyTenth"));
-  assert.equals(undefined, superstoreSync.get("prefixKeyEleventh"));
+  assert.equals(undefined, superstoreSync.get("pref.?xKeyTenth"));
+  assert.equals(undefined, superstoreSync.get("pref.?xKeyEleventh"));
   assert.equals('123', superstoreSync.get("other"));
 
   if (!buggyLocalStorage) {
-    assert.equals(undefined, getLocalStorage("prefixKeyEleventh"));
+    assert.equals(undefined, getLocalStorage("pref.?xKeyEleventh"));
     assert.equals('"123"', getLocalStorage("other"));
-    assert.equals(undefined, getLocalStorage("prefixKeyTenth"));
+    assert.equals(undefined, getLocalStorage("pref.?xKeyTenth"));
   }
 };
 
