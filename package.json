@@ -1,6 +1,6 @@
 {
   "name": "superstore-sync",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Local storage, without the bugs.",
   "main": "lib/superstore-sync.js",
   "engines": {
@@ -28,7 +28,7 @@
   },
   "keywords": [
     "localstorage",
-	"sessionstorage"
+    "sessionstorage"
   ],
   "license": "MIT"
 }
