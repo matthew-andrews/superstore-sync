@@ -27,10 +27,8 @@
     "url": "git@github.com:matthew-andrews/superstore-sync.git"
   },
   "keywords": [
-    "localstorage"
+    "localstorage",
+	"sessionstorage"
   ],
-  "license": "MIT",
-  "dependencies": {
-    "escape-regexp-component": "~1.0"
-  }
+  "license": "MIT"
 }
