@@ -29,10 +29,8 @@
   "keywords": [
     "localstorage"
   ],
-  "author": "Matt Andrews <matthew.andrews@ft.com>",
   "license": "MIT",
   "dependencies": {
-    "setimmediate": "~1.0.1",
     "escape-regexp-component": "~1.0"
   }
 }
