@@ -1,0 +1,22 @@
+{
+  "name": "superstore-sync",
+  "version": "2.0.0",
+  "homepage": "https://github.com/matthew-andrews/superstore-sync",
+  "authors": [
+    "Matthew Andrews <matt@mattandre.ws>"
+  ],
+  "description": "Web Storeage APIs without the bugs.",
+  "main": "lib/superstore-sync.js",
+  "keywords": [
+    "localstorage",
+    "sessionstorage"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
