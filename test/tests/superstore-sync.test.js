@@ -39,6 +39,15 @@ tests["Should be able to set and get data against a key"] = function() {
   assert.equals('value1', val);
 };
 
+tests["Should be able to use the same key for local and session storage"] = function() {
+  superstoreSync.local.set('keyOne', 'localValue');
+  superstoreSync.session.set('keyOne', 'sessionValue');
+  var localVal = superstoreSync.local.get('keyOne');
+  var sessionVal = superstoreSync.session.get('keyOne');
+  assert.equals('localValue', localVal);
+  assert.equals('sessionValue', sessionVal);
+};
+
 tests[prefix + "Should be able to read things (twice) from local storage"] = function() {
   superstoreSync.local.set("keyTwo", 3884);
 
