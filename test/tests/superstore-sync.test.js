@@ -119,4 +119,9 @@ tests["watch for changes in other processes"] = function() {
   assert.equals(val, 'B');
 };
 
+tests["#isPersisting returns whether or not the data is persisting to storage"] = function() {
+	var isPersisting = superstoreSync.isPersisting();
+	assert.equals(isPersisting, !buggyLocalStorage);
+};
+
 buster.testCase('superstore-sync', tests);
