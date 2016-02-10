@@ -42,6 +42,9 @@ superstore-sync is an uninstantiable module.  Its methods are:
 
 ### #session.clear(prefix)
 
+## #isPersisting()
+* returns a boolean set to true if data is being persisted to storage, or false if it is being kept in memory (e.g. if localStorage is full or inaccessible).
+
 ## usage
 ```javascript
 var store = require('superstore-sync');
