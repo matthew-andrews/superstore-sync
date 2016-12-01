@@ -1,6 +1,6 @@
 {
   "name": "superstore-sync",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Local storage, without the bugs.",
   "main": "lib/superstore-sync.js",
   "engines": {
